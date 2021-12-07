@@ -41,14 +41,7 @@ const PhoneNumber = ({ navigation }) => {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-<<<<<<< HEAD:screens/PhoneNumber.tsx
               sendSmsVerification(formattedValue);
-=======
-              sendSmsVerification(formattedValue).catch((err) =>
-                console.log(err)
-              );
-              console.log("sent SMS");
->>>>>>> 0d54d6b5... Use react-native cli instead of expo:src/screens/PhoneNumber.tsx
               navigation.navigate("Otp", { phoneNumber: formattedValue });
             }}
           >

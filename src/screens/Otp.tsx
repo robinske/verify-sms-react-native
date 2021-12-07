@@ -7,7 +7,6 @@ import OTPInputView from "@twotalltotems/react-native-otp-input";
 const Otp = ({ route, navigation }) => {
   const { phoneNumber } = route.params;
   const [invalidCode, setInvalidCode] = useState(false);
-  console.log("hellooooooo");
   return (
     <SafeAreaView style={styles.wrapper}>
       <Text style={styles.prompt}>Enter the code we sent you</Text>
@@ -25,7 +24,6 @@ const Otp = ({ route, navigation }) => {
         codeInputFieldStyle={styles.underlineStyleBase}
         codeInputHighlightStyle={styles.underlineStyleHighLighted}
         onCodeFilled={(code) => {
-          console.log("hello2");
           checkVerification(phoneNumber, code).then((success) => {
             if (!success) {
               setInvalidCode(true);

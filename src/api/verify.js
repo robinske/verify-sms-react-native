@@ -7,6 +7,7 @@ const sendSmsVerification = async (phoneNumber) => {
       channel: "sms",
     });
 
+    console.log(BASE_URL);
     const response = await fetch(`${BASE_URL}/start-verify`, {
       method: "POST",
       headers: {
@@ -16,8 +17,6 @@ const sendSmsVerification = async (phoneNumber) => {
     });
 
     const json = await response.json();
-    console.log("hello1");
-    console.log(json.success);
     return json.success;
   } catch (error) {
     console.error(error);
