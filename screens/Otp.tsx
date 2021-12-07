@@ -25,7 +25,9 @@ const Otp = ({ route, navigation }) => {
         codeInputHighlightStyle={styles.underlineStyleHighLighted}
         onCodeFilled={(code) => {
           checkVerification(phoneNumber, code).then((success) => {
-            if (!success) setInvalidCode(true);
+            if (!success) {
+              setInvalidCode(true);
+            }
             success && navigation.replace("Gated");
           });
         }}
@@ -40,15 +42,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-
-  borderStyleBase: {
-    width: 30,
-    height: 45,
-  },
-
-  borderStyleHighLighted: {
-    borderColor: "#03DAC6",
   },
 
   underlineStyleBase: {

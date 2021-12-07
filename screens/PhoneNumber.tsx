@@ -14,7 +14,6 @@ import { sendSmsVerification } from "../api/verify";
 const PhoneNumber = ({ navigation }) => {
   const [value, setValue] = useState("");
   const [formattedValue, setFormattedValue] = useState("");
-  const [smsSent, setSmsSent] = useState(false);
   const phoneInput = useRef<PhoneInput>(null);
 
   return (
@@ -42,21 +41,12 @@ const PhoneNumber = ({ navigation }) => {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              sendSmsVerification(formattedValue).then((sent) => {
-                setSmsSent(sent);
-                navigation.navigate("Otp", { phoneNumber: formattedValue });
-              });
+              sendSmsVerification(formattedValue);
+              navigation.navigate("Otp", { phoneNumber: formattedValue });
             }}
           >
             <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
-          {smsSent && (
-            <View>
-              <Text
-                style={styles.status}
-              >{`Sent SMS to ${formattedValue}`}</Text>
-            </View>
-          )}
         </SafeAreaView>
       </View>
     </>

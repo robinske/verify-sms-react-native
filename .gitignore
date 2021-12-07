@@ -1,4 +1,5 @@
 .env
+.vscode/
 
 yarn-error.log
 node_modules/
