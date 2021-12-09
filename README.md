@@ -1,5 +1,7 @@
 # SMS Verification in React Native
 
+Full tutorial on the Twilio blog: [https://www.twilio.com/blog/phone-verification-react-native](https://www.twilio.com/blog/phone-verification-react-native)
+
 ## Requirements
 
 **React Native environment**
